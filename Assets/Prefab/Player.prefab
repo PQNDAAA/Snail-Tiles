@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1003697439023492424}
   - component: {fileID: 6484158458823645316}
   - component: {fileID: 7405589515691941200}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 3588603128206130687}
   - component: {fileID: 8150941538552853796}
   - component: {fileID: 6558707274459611269}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7065ef853cf94646bbbfc4d744aae84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lerpDuration: 2
 --- !u!65 &6558707274459611269
 BoxCollider:
   m_ObjectHideFlags: 0

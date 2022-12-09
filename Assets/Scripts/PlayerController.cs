@@ -21,8 +21,6 @@ public class PlayerController : MonoBehaviour
         if (movementIsFinished && currentRoadIndex > -1 && Input.GetKeyDown(KeyCode.Q))
         {
             SubstractActorLocationX(5);
-
-            //SubstractActorLocationX(5);
         }
         if (movementIsFinished && currentRoadIndex < 1 && Input.GetKeyDown(KeyCode.D))
         {
