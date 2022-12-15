@@ -6,6 +6,7 @@ public class ProceduralGeneration : MonoBehaviour
 {
     public GameObject roadPrefab;
     public GameObject[] Obstacles;
+    public GameObject playerGameObject;
     public List<Vector3> spawnXLocationObstacles = new List<Vector3>();
 
     public int spaceX = 5;
@@ -21,6 +22,7 @@ public class ProceduralGeneration : MonoBehaviour
             spawnRoadXLocation += spaceX;
             Instantiate(roadPrefab, new Vector3(spawnRoadXLocation, 0, 0), Quaternion.identity);
         }
+        SpawnPlayer();
         SpawnObstacles();
     }
 
@@ -34,6 +36,10 @@ public class ProceduralGeneration : MonoBehaviour
            Instantiate(RandomObstacles(), coord, Quaternion.identity);
          
         }
+    }
+    public void SpawnPlayer()
+    {
+        Instantiate(playerGameObject,new Vector3(10,1,0), Quaternion.identity);
     }
 
     public GameObject RandomObstacles()

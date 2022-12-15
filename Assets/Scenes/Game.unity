@@ -155,6 +155,8 @@ MonoBehaviour:
   roadPrefab: {fileID: 3329635718998561802, guid: 00868e85926971e4ca590217200d61cb, type: 3}
   Obstacles:
   - {fileID: 1740036000681239172, guid: d17007dca6a9b0249af2a54ae08f12fb, type: 3}
+  - {fileID: 922753472403290132, guid: 8fa92db575a4abb4988c85d11a00a962, type: 3}
+  playerGameObject: {fileID: 8929410420116438433, guid: 06c7fed38c4a8ca479f66fd913ace187, type: 3}
   spawnXLocationObstacles:
   - {x: 15, y: 1, z: -6}
   - {x: 10, y: 1, z: -6}
@@ -346,11 +348,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985651577}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 10, y: 4, z: 18.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}

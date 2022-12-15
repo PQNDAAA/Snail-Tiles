@@ -51,13 +51,13 @@ public class PlayerController : MonoBehaviour
 
     void AddActorLocationX(int index)
     {
-        positionToMoveTo = new Vector3(gameObject.transform.position.x + index, 0, 0);
+        positionToMoveTo = new Vector3(gameObject.transform.position.x + index, 1, 0);
         StartCoroutine(LerpPosition(positionToMoveTo, lerpDuration));
         currentRoadIndex++;
     }
     void SubstractActorLocationX(int index)
     {
-        positionToMoveTo = new Vector3(gameObject.transform.position.x - index, 0, 0);
+        positionToMoveTo = new Vector3(gameObject.transform.position.x - index, 1, 0);
         StartCoroutine(LerpPosition(positionToMoveTo, lerpDuration));
         currentRoadIndex--;
     }

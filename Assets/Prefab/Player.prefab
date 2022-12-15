@@ -95,9 +95,11 @@ GameObject:
   - component: {fileID: 8150941538552853796}
   - component: {fileID: 6558707274459611269}
   - component: {fileID: 7061884218507806610}
-  m_Layer: 6
+  - component: {fileID: -2619944681430842358}
+  - component: {fileID: -2957469673324085291}
+  m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,3 +159,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 1945412899549267497, guid: 938822b2e129d684fa972106420e6bcf, type: 3}
+--- !u!114 &-2619944681430842358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8929410420116438433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d2dd10d75821c4fa948316cfd5b7c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &-2957469673324085291
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8929410420116438433}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
