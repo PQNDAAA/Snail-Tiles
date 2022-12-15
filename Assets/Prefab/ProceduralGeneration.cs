@@ -21,15 +21,24 @@ public class ProceduralGeneration : MonoBehaviour
             spawnRoadXLocation += spaceX;
             Instantiate(roadPrefab, new Vector3(spawnRoadXLocation, 0, 0), Quaternion.identity);
         }
-        SpawnObstacles(3);
+        SpawnObstacles();
     }
 
 
-    public void SpawnObstacles(int value)
+    public void SpawnObstacles()
     {
-        for (int i = 0; i < spawnXLocationObstacles.Count; i++)
+        foreach(var loc in spawnXLocationObstacles)
         {
-            Instantiate(Obstacles[0], spawnXLocationObstacles[i], Quaternion.identity);
+           Vector3 coord = new Vector3(loc.x, loc.y, loc.z);
+
+           Instantiate(RandomObstacles(), coord, Quaternion.identity);
+         
         }
-       }
     }
+
+    public GameObject RandomObstacles()
+    {
+        int indexObstacles = Random.RandomRange(0, Obstacles.Length);
+        return Obstacles[indexObstacles];
+    }
+}
