@@ -13,4 +13,12 @@ public class MoveForward : MonoBehaviour
             gameObject.transform.position.y,
             gameObject.transform.position.z + -0.01f);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Obstacles")
+        {
+            Destroy(other.gameObject);
+        }
+    }
 }

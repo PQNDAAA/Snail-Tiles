@@ -29,12 +29,11 @@ public class ProceduralGeneration : MonoBehaviour
 
     public void SpawnObstacles()
     {
-        foreach(var loc in spawnXLocationObstacles)
-        {
-           Vector3 coord = new Vector3(loc.x, loc.y, loc.z);
+        int indexRandom = Random.RandomRange(0, spawnXLocationObstacles.Count);
 
-           Instantiate(RandomObstacles(), coord, Quaternion.identity);
-         
+        for (int i = 0; i < indexRandom; i++)
+        {
+            Instantiate(RandomObstacles(), RandomVector(), Quaternion.identity);
         }
     }
     public void SpawnPlayer()
@@ -46,5 +45,11 @@ public class ProceduralGeneration : MonoBehaviour
     {
         int indexObstacles = Random.RandomRange(0, Obstacles.Length);
         return Obstacles[indexObstacles];
+    }
+
+    public Vector3 RandomVector()
+    {
+        int indexVector = Random.RandomRange(0, spawnXLocationObstacles.Count);
+        return spawnXLocationObstacles[indexVector];
     }
 }
