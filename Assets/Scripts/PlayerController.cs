@@ -18,11 +18,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (movementIsFinished && currentRoadIndex > -1 && Input.GetKeyDown(KeyCode.Q))
+        if (movementIsFinished && currentRoadIndex > -1 && Input.GetKeyDown(KeyCode.D))
         {
             SubstractActorLocationX(5);
         }
-        if (movementIsFinished && currentRoadIndex < 1 && Input.GetKeyDown(KeyCode.D))
+        if (movementIsFinished && currentRoadIndex < 1 && Input.GetKeyDown(KeyCode.Q))
         {
             AddActorLocationX(5);
         }
