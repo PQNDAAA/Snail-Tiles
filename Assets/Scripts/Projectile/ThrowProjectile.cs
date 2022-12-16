@@ -7,6 +7,8 @@ public class ThrowProjectile : MonoBehaviour
     public GameObject projectile;
     GameObject player;
 
+    bool canThrowProjectile = true;
+
     GameObject tmpProjectileSpawn;
     // Start is called before the first frame update
     void Start()
@@ -17,10 +19,18 @@ public class ThrowProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(player.transform.position);
-        if (Input.GetKeyDown(KeyCode.Space))
+
+        if (canThrowProjectile && Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(projectile, player.transform.position, Quaternion.identity);
+            StartCoroutine(Coldown());
         }
+    }
+
+    IEnumerator Coldown()
+    {
+        canThrowProjectile = false;
+        yield return new WaitForSeconds(2);
+        canThrowProjectile = true;
     }
 }
