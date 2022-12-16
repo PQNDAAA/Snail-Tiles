@@ -19,7 +19,7 @@ public class ScoreManager : MonoBehaviour
     {
         score += 0.001f * multiplicater;
         UI_score.text = Mathf.Round(score).ToString();
-        UI_Multiplier.text = multiplicater.ToString();
+        UI_Multiplier.text = multiplicater.ToString("F2");
 
         shakeMultiplierStrenght = multiplicater / 200;
         UI_Multiplier.transform.position = new Vector2(UI_Multiplier.transform.position.x + (shakeMultiplierStrenght * Mathf.Cos(multiplicater * Time.time)),

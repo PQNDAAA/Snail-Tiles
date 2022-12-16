@@ -13,8 +13,6 @@ public class Timer : MonoBehaviour
     public float timerRemaining = 0;
     float totalTimer = 0;
 
-    float fillamount;
-
     public bool isStart = false;
 
     Text timerTxt;
@@ -72,5 +70,17 @@ public class Timer : MonoBehaviour
         }
 
         totalTimer = timerRemaining;
+    }
+    public void RestartTimer(float value)
+    {
+        seconds = value;
+
+        CalculationTimeRemaining();
+        isStart = true;
+        ResetLoader();
+    }
+    public float ResetLoader()
+    {
+        return loading.fillAmount = 1;
     }
 }
