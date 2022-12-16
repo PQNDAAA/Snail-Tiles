@@ -1,10 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MoveForward : MonoBehaviour
 {
+    ScoreManager scoreManager;
 
+    private void Start()
+    {
+        scoreManager = FindObjectOfType<ScoreManager>();
+        StartCoroutine(DeathAfterSecond(5));
+    }
 
     // Update is called once per frame
     void Update()
@@ -18,7 +25,14 @@ public class MoveForward : MonoBehaviour
     {
         if (other.gameObject.tag == "Obstacles")
         {
+            scoreManager.AddMultiplier(0.1f);
             Destroy(other.gameObject);
         }
+    }
+
+    IEnumerator DeathAfterSecond(int seconde)
+    {
+        yield return new WaitForSeconds(seconde);
+        Destroy(gameObject);
     }
 }
