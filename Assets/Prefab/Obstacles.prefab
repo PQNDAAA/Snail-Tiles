@@ -106,8 +106,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3585188073375971750}
-  - component: {fileID: 5881495733024898847}
   - component: {fileID: 4909182548154897991}
+  - component: {fileID: 3273917947712918671}
+  - component: {fileID: 4585526685273152358}
   m_Layer: 0
   m_Name: Obstacles
   m_TagString: Obstacles
@@ -131,20 +132,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5881495733024898847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1740036000681239172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f66f963a8828bee4ea920093684cb090, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedMovement: 0.005
-  timer: {fileID: 0}
 --- !u!65 &4909182548154897991
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -158,3 +145,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3273917947712918671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740036000681239172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9b9c39277f4da14fb9d025213b2c5f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedObstacles: 0.008
+  maxSpeedObstacles: 0
+  gameManager: {fileID: 0}
+--- !u!114 &4585526685273152358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740036000681239172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac3c8d04f7548cd4596bac824471d955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: {fileID: 0}
