@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public ProceduralGeneration proceduralGeneration;
     public Timer timer;
     public ScoreManager scoreManager;
+    public PlayerController playerController;
 
     public float speedMovement;
     public int eventMade = 0;
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         proceduralGeneration = GameObject.Find("ProceduralGeneration").GetComponent<ProceduralGeneration>();
+        playerController = FindObjectOfType<PlayerController>();
         timer = GameObject.Find("Timer").GetComponent<Timer>();
 
         scoreManager = GetComponent<ScoreManager>();
@@ -49,6 +51,8 @@ public class GameManager : MonoBehaviour
         if(timer.timerRemaining <= 0)
         {
             speedMovement += Time.deltaTime;
+
+            playerController.lerpDuration /= 1.23f;
 
             scoreManager.AddMultiplier(1);
             timer.RestartTimer(10);
