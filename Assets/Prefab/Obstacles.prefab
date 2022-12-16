@@ -143,9 +143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66f963a8828bee4ea920093684cb090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  proceduralGeneration: {fileID: 0}
-  thisPos: {x: 0, y: 0, z: 0}
-  speedMovement: 0.006
+  speedMovement: 0.005
+  timer: {fileID: 0}
 --- !u!65 &4909182548154897991
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -29,7 +29,7 @@ public class ProceduralGeneration : MonoBehaviour
 
     public void SpawnObstacles()
     {
-        int indexRandom = Random.RandomRange(0, spawnXLocationObstacles.Count);
+        int indexRandom = Random.RandomRange(1, 3);
 
         for (int i = 0; i < indexRandom; i++)
         {

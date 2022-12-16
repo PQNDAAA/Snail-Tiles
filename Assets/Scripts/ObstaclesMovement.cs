@@ -4,31 +4,26 @@ using UnityEngine;
 
 public class ObstaclesMovement : MonoBehaviour
 {
-    public ProceduralGeneration proceduralGeneration;
-    public Vector3 thisPos = new Vector3();
-    public float speedMovement = 0.001f;
+    public float speedMovement = 0.005f;
+    public Timer timer;
 
     void Start()
     {
-        proceduralGeneration = GameObject.Find("ProceduralGeneration").GetComponent<ProceduralGeneration>();
-
-        thisPos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);   
+        timer = GameObject.Find("Timer").GetComponent<Timer>();
     }
 
     void Update()
     {
         gameObject.transform.position = new Vector3(gameObject.transform.position.x, 1, gameObject.transform.position.z + speedMovement);
 
-        CheckDistance();
-    }
-
-    public void CheckDistance()
-    {
-        if(gameObject.transform.position.z >= 10)
+       if(timer.timerRemaining <= 0)
         {
-            Instantiate(proceduralGeneration.RandomObstacles(), thisPos, Quaternion.identity);
-            Destroy(gameObject);   
-          
+           /* speedMovement *= 10;
+            Debug.Log(speedMovement);*/
+            timer.seconds = 10;
+            timer.CalculationTimeRemaining();
+            timer.isStart = true;
+            timer.loading.fillAmount = 1;
         }
     }
 }

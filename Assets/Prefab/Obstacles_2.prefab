@@ -106,8 +106,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1745594510786922456}
-  - component: {fileID: 3180199857344849336}
   - component: {fileID: 5483145752134258415}
+  - component: {fileID: 3180199857344849336}
   m_Layer: 0
   m_Name: Obstacles_2
   m_TagString: Obstacles
@@ -131,6 +131,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5483145752134258415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922753472403290132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f66f963a8828bee4ea920093684cb090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedMovement: 0.005
+  timer: {fileID: 0}
 --- !u!135 &3180199857344849336
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -144,18 +158,3 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5483145752134258415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 922753472403290132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f66f963a8828bee4ea920093684cb090, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  proceduralGeneration: {fileID: 0}
-  thisPos: {x: 0, y: 0, z: 0}
-  speedMovement: 0.004
