@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public Timer timer;
     public ScoreManager scoreManager;
     public PlayerController playerController;
+    public GameObject deathPanel;
 
     public float speedMovement;
     public int eventMade = 0;
@@ -26,8 +27,7 @@ public class GameManager : MonoBehaviour
         CheckDistance();
         CheckObstacles();
         CheckTimer();
-
-        
+        CheckPlayer();
     }
     public void CheckDistance()
     {
@@ -60,9 +60,21 @@ public class GameManager : MonoBehaviour
             eventMade += 1;
         }
     }
+    public void CheckPlayer()
+    {
+        if(FindPlayer() == null)
+        {
+            deathPanel.SetActive(true);
+            Time.timeScale = 0;
+        }
+    }
 
     public GameObject[] FindObstacles()
     {
         return GameObject.FindGameObjectsWithTag("Obstacles");
+    }
+    public GameObject FindPlayer()
+    {
+        return GameObject.FindGameObjectWithTag("Player");
     }
 }

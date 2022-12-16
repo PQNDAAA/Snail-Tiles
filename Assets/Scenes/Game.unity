@@ -708,6 +708,7 @@ GameObject:
   - component: {fileID: 1069564284}
   - component: {fileID: 1069564286}
   - component: {fileID: 1069564285}
+  - component: {fileID: 1069564287}
   m_Layer: 5
   m_Name: DeathPanel
   m_TagString: Untagged
@@ -776,6 +777,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1069564283}
   m_CullTransparentMesh: 1
+--- !u!114 &1069564287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069564283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a6b189289cab44b9e05941f0c82982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreTxt: {fileID: 1833978162}
+  scoreManager: {fileID: 0}
+  finalScore: 0
 --- !u!1 &1197697987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,6 +1036,8 @@ MonoBehaviour:
   proceduralGeneration: {fileID: 0}
   timer: {fileID: 0}
   scoreManager: {fileID: 0}
+  playerController: {fileID: 0}
+  deathPanel: {fileID: 1069564283}
   speedMovement: 0
   eventMade: 0
 --- !u!4 &1249417586
@@ -1049,6 +1067,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290531695ed1c2f4790c99aa05b97282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
+  multiplicater: 1
   UI_score: {fileID: 1246357406}
   UI_Multiplier: {fileID: 1458979671}
 --- !u!1 &1452659642
@@ -1493,7 +1513,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 33.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1833978162
@@ -1688,7 +1708,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1968034719}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1069564287}
+        m_TargetAssemblyTypeName: DeathPanel, Assembly-CSharp
+        m_MethodName: BackToTheMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1968034719
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    float score = 0;
-    float multiplicater = 1;
+    public float score = 0;
+    public float multiplicater = 1;
 
     float shakeMultiplierStrenght = 0.01f;
 

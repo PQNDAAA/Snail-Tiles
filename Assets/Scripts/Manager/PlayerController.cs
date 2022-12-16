@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     int currentRoadIndex = 0;
     public float lerpDuration = 2f;
+    public float rotateSpeed = 10f;
 
     Vector3 positionToMoveTo;
     bool movementIsFinished = true;
