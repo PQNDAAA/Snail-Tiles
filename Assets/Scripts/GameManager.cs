@@ -5,16 +5,23 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public ProceduralGeneration proceduralGeneration;
+    public Timer timer;
+
+    public float speedMovement;
 
     void Start()
     {
         proceduralGeneration = GameObject.Find("ProceduralGeneration").GetComponent<ProceduralGeneration>();
+        timer = GameObject.Find("Timer").GetComponent<Timer>();
     }
 
     void Update()
     {
         CheckDistance();
         CheckObstacles();
+        CheckTimer();
+
+        
     }
     public void CheckDistance()
     {
@@ -32,6 +39,18 @@ public class GameManager : MonoBehaviour
         {
             proceduralGeneration.SpawnObstacles();
         }  
+    }
+    public void CheckTimer()
+    {
+        if(timer.timerRemaining <= 0)
+        {
+            speedMovement += Time.deltaTime;
+
+            timer.seconds = 10;
+            timer.CalculationTimeRemaining();
+            timer.isStart = true;
+            timer.loading.fillAmount = 1;
+        }
     }
 
     public GameObject[] FindObstacles()
