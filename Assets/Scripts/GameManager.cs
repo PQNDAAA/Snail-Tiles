@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public Timer timer;
 
     public float speedMovement;
+    public int eventMade = 0;
 
     void Start()
     {
@@ -47,6 +48,7 @@ public class GameManager : MonoBehaviour
             speedMovement += Time.deltaTime;
 
             timer.seconds = 10;
+            eventMade += 1;
             timer.CalculationTimeRemaining();
             timer.isStart = true;
             timer.loading.fillAmount = 1;
