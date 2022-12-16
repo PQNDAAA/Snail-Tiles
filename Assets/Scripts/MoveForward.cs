@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MoveForward : MonoBehaviour
 {
-    ScoreManager scoreManager;
+    public ScoreManager scoreManager;
 
     private void Start()
     {

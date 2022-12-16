@@ -17,7 +17,7 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score += 0.001f * 1;
+        score += 0.001f * multiplicater;
         UI_score.text = Mathf.Round(score).ToString();
         UI_Multiplier.text = multiplicater.ToString();
 

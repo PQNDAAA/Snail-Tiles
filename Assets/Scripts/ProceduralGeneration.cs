@@ -38,7 +38,7 @@ public class ProceduralGeneration : MonoBehaviour
     }
     public void SpawnPlayer()
     {
-        Instantiate(playerGameObject,new Vector3(10,1,0), Quaternion.identity);
+        Instantiate(playerGameObject,new Vector3(10,1,9), Quaternion.identity);
     }
 
     public GameObject RandomObstacles()
