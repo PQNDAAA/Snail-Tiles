@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     public float speedMovement;
     public int eventMade = 0;
+    public bool isDead = false;
 
     void Start()
     {
@@ -60,12 +61,17 @@ public class GameManager : MonoBehaviour
             eventMade += 1;
         }
     }
-    public void CheckPlayer()
+    public bool CheckPlayer()
     {
-        if(FindPlayer() == null)
+        if (FindPlayer() == null)
         {
             deathPanel.SetActive(true);
             Time.timeScale = 0;
+            return isDead = true;
+        }
+        else
+        {
+            return isDead = false;
         }
     }
 

@@ -10,11 +10,9 @@ public class ScoreManager : MonoBehaviour
 
     float shakeMultiplierStrenght = 0.01f;
 
-
     public TextMeshProUGUI UI_score;
     public TextMeshProUGUI UI_Multiplier;
 
-    // Update is called once per frame
     void Update()
     {
         score += 0.001f * multiplicater;
@@ -30,8 +28,4 @@ public class ScoreManager : MonoBehaviour
     {
         multiplicater += value;
     }
-
-
-
-
 }

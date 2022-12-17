@@ -14,7 +14,7 @@ public class DeathPanel : MonoBehaviour
     {
         scoreManager = GameObject.FindObjectOfType<ScoreManager>();
 
-        scoreTxt.text = "Score: " + scoreManager.score.ToString();
+        scoreTxt.text = "Score: " + Mathf.Round(scoreManager.score);
     }
     public void BackToTheMainMenu()
     {

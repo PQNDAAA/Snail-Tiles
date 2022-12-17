@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     public void Play()
     {
         SceneManager.LoadScene("Game");
+        Time.timeScale = 1;
     }
 
     public void Quit()
@@ -16,7 +17,9 @@ public class MainMenu : MonoBehaviour
         {
             UnityEditor.EditorApplication.isPlaying = false;
         }
-        else 
+        else
+        {
             Application.Quit();
+        }
     }
 }

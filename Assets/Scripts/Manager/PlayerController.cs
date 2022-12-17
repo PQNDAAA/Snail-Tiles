@@ -11,12 +11,6 @@ public class PlayerController : MonoBehaviour
     Vector3 positionToMoveTo;
     bool movementIsFinished = true;
 
-    private void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (movementIsFinished && currentRoadIndex > -1 && Input.GetKeyDown(KeyCode.D))
@@ -29,8 +23,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-    
     IEnumerator LerpPosition(Vector3 targetPosition, float duration)
     {
         movementIsFinished = false;
