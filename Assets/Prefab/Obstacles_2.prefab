@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1745594510786922456}
   - component: {fileID: 3180199857344849336}
   - component: {fileID: 7363813807008089348}
-  - component: {fileID: 3241758240530018709}
   m_Layer: 0
   m_Name: Obstacles_2
   m_TagString: Obstacles
@@ -60,22 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d58deb2e742cf345b006fd90f38340e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedObstacles: 0
-  maxSpeedObstacles: 0
+  defautSpeedObstacles: 0.006
+  initialSpeedObstacles: 0
   gameManager: {fileID: 0}
---- !u!114 &3241758240530018709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 922753472403290132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac3c8d04f7548cd4596bac824471d955, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: {fileID: 0}
 --- !u!1001 &1427638158785767935
 PrefabInstance:
   m_ObjectHideFlags: 0

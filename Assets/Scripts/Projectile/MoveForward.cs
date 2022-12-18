@@ -12,15 +12,16 @@ public class MoveForward : MonoBehaviour
         scoreManager = FindObjectOfType<ScoreManager>();
         StartCoroutine(DeathAfterSecond(5));
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
+        //Direction of the projectile
         gameObject.transform.position = new Vector3(gameObject.transform.position.x,
             gameObject.transform.position.y,
             gameObject.transform.position.z + -0.01f);
     }
 
+    //Collision
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Obstacles")
@@ -30,6 +31,7 @@ public class MoveForward : MonoBehaviour
         }
     }
 
+    //Destroy the projectile
     IEnumerator DeathAfterSecond(int seconde)
     {
         yield return new WaitForSeconds(seconde);

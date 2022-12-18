@@ -9,28 +9,26 @@ public class ThrowProjectile : MonoBehaviour
 
     bool canThrowProjectile = true;
 
-    GameObject tmpProjectileSpawn;
-    // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
     void Update()
     {
-
+        //Spawn the projectile with the cooldown 
         if (canThrowProjectile && Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(projectile, player.transform.position, Quaternion.identity);
-            StartCoroutine(Coldown());
+            StartCoroutine(Cooldown());
         }
     }
 
-    IEnumerator Coldown()
+    //Cooldown between to throw each projectile 
+    IEnumerator Cooldown()
     {
         canThrowProjectile = false;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(4);
         canThrowProjectile = true;
     }
 }

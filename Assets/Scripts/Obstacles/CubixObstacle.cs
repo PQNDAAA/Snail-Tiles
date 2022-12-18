@@ -7,14 +7,14 @@ public class CubixObstacle : AbstractObstacles
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-
-
     }
     public override void Update()
     {
-        maxSpeedObstacles = speedObstacles + gameManager.speedMovement;
+        //Explained in "AbstractObstacles.cs"
+        initialSpeedObstacles = defautSpeedObstacles + gameManager.speedMovement;
 
-        gameObject.transform.position = new Vector3(gameObject.transform.position.x, 1, gameObject.transform.position.z + maxSpeedObstacles);
+        //Movement z of the obstacle with the inital speed of the obstacle  
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x, 1, gameObject.transform.position.z + initialSpeedObstacles);
 
     }
 

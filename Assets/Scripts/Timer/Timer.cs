@@ -52,12 +52,14 @@ public class Timer : MonoBehaviour
         
     }
 
+    //Manage the loader from the timer 
     public void FillLoading()
     {
         timerRemaining -= Time.deltaTime;
         float fill = timerRemaining / totalTimer;
         loading.fillAmount = fill;
     }
+    //Manage the time remaining at beginning
     public void CalculationTimeRemaining()
     {
         if (minutes > 0)
@@ -71,6 +73,7 @@ public class Timer : MonoBehaviour
 
         totalTimer = timerRemaining;
     }
+    //Restart the timer
     public void RestartTimer(float value)
     {
         seconds = value;
@@ -79,6 +82,7 @@ public class Timer : MonoBehaviour
         isStart = true;
         ResetLoader();
     }
+    //Reset the loader when the timer restart
     public float ResetLoader()
     {
         return loading.fillAmount = 1;

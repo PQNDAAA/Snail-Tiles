@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     public void Play()
     {
         SceneManager.LoadScene("Game");
+        //To make the timer work
         Time.timeScale = 1;
     }
 

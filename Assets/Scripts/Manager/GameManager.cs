@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,9 +11,15 @@ public class GameManager : MonoBehaviour
     public ScoreManager scoreManager;
     public PlayerController playerController;
     public GameObject deathPanel;
+    public TextMeshProUGUI waveTxt;
 
+    //calculate the speed movement of obstacles 
     public float speedMovement;
+    //max speed movement added for an obstacle
+    public float maxSpeedMovement = 0.03f;
+
     public int eventMade = 0;
+
     public bool isDead = false;
 
     void Start()
@@ -26,41 +34,41 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         CheckDistance();
-        CheckObstacles();
         CheckTimer();
         CheckPlayer();
+
+        AccelerateGame();
     }
+    //The game destroy obstacles if their distances z is 25
     public void CheckDistance()
     {
         foreach(GameObject go in FindObstacles())
         {
-            if(go.transform.position.z >= 10)
+            if(go.transform.position.z >= 25)
             {
                 Destroy(go);
             }
         }
     }
-    public void CheckObstacles()
-    {
-        if(FindObstacles().Length == 0)
-        {
-            proceduralGeneration.SpawnObstacles();
-        }  
-    }
+    //The game checks if the timer finished to accelerate the obstacles and increase the score
     public void CheckTimer()
     {
         if(timer.timerRemaining <= 0)
         {
-            speedMovement += Time.deltaTime;
-
-            playerController.lerpDuration /= 1.23f;
+            if (speedMovement <= maxSpeedMovement)
+            {
+                speedMovement += Time.deltaTime;
+                playerController.lerpDuration /= 1.23f;
+            }
 
             scoreManager.AddMultiplier(1);
             timer.RestartTimer(10);
 
             eventMade += 1;
+            waveTxt.text = "Event "+eventMade;
         }
     }
+    //The game checks if the player died or not 
     public bool CheckPlayer()
     {
         if (FindPlayer() == null)
@@ -75,6 +83,31 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //The game accelerates when a event made number is crossed
+    public void AccelerateGame()
+    {
+        if (FindObstacles().Length == 0) 
+        {
+            if (eventMade >= 5 && eventMade < 10)
+            {
+                StartCoroutine(proceduralGeneration.SpawnObstacles(2));
+            }
+            else if (eventMade >= 10 && eventMade < 50)
+            {
+                StartCoroutine(proceduralGeneration.SpawnObstacles(3));
+            }
+            else if(eventMade >= 50)
+            {
+                StartCoroutine(proceduralGeneration.SpawnObstacles(4));
+            }
+            else
+            {
+                StartCoroutine(proceduralGeneration.SpawnObstacles(1));
+            }
+        }
+    }
+
+    //The game finds various Go
     public GameObject[] FindObstacles()
     {
         return GameObject.FindGameObjectsWithTag("Obstacles");
